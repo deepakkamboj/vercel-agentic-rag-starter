@@ -9,8 +9,8 @@ import Header from "@/components/header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Softleo Agentic RAG",
-  description: "An AI assistant for Softleo LLC",
+  title: "CoffeeCorp Agentic RAG",
+  description: "An AI assistant for CoffeeCorp LLC",
 };
 
 export default function RootLayout({

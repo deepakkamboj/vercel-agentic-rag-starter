@@ -1,15 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  BarChart3,
-  FileText,
-  Home,
-  MessageSquare,
-  Settings,
-  Coffee,
-  Info,
-} from "lucide-react";
+import { FileText, Home, MessageSquare, Settings, Coffee } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -35,12 +27,9 @@ export default function AppSidebar() {
   const navigationItems = [
     { name: "Dashboard", href: "/", icon: Home },
     { name: "Chat", href: "/chat", icon: MessageSquare },
-    { name: "Coffee Orders", href: "/coffee", icon: Coffee },
-    { name: "Company Info", href: "/company", icon: Info },
-    { name: "Analytics", href: "/analytics", icon: BarChart3 },
-    { name: "Knowledge Base", href: "/knowledge-base", icon: FileText },
+    { name: "AI Agents", href: "/agents", icon: Coffee },
+
     { name: "RAG System", href: "/rag", icon: FileText },
-    { name: "AI Agents", href: "/agents", icon: MessageSquare },
   ];
 
   return (

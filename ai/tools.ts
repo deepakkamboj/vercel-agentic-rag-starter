@@ -245,29 +245,30 @@ export const cancelOrderTool = tool({
 
 // Company info tool
 export const companyInfoTool = tool({
-  description: "Search for information about Softleo and its services",
+  description: "Search for information about CoffeeCorp and its services",
   parameters: z.object({
-    query: z.string().describe("The search query about Softleo"),
+    query: z.string().describe("The search query about CoffeeCorp"),
   }),
   execute: async ({ query }) => {
     // Static company information
     const companyInfo = {
-      name: "Softleo",
+      name: "CoffeeCorp",
       founded: 2010,
       description:
-        "A leading technology solutions provider specializing in cloud migration, digital transformation, and AI solutions.",
+        "A specialty coffee company focused on ethically sourced coffee beans, innovative brewing methods, and premium cafe experiences.",
       services: [
-        "Cloud Migration",
-        "Digital Transformation",
-        "AI Solutions",
-        "IT Consulting",
+        "Specialty Coffee Production",
+        "Coffee Subscription Service",
+        "Barista Training Programs",
+        "Coffee Shop Franchising",
       ],
-      partnerships: ["Microsoft Gold Partner"],
-      mission: "To empower businesses through innovative technology solutions",
+      partnerships: ["Fair Trade Certified", "Rainforest Alliance"],
+      mission:
+        "To elevate the coffee experience through sustainability, quality, and innovation",
       contact: {
-        email: "contact@softleo.com",
-        phone: "+1-800-SOFTLEO",
-        website: "www.softleo.com",
+        email: "contact@coffeecorp.com",
+        phone: "+1-800-COFFEE-1",
+        website: "www.coffeecorp.com",
       },
     };
 
@@ -280,16 +281,16 @@ export const companyInfoTool = tool({
     const queryLower = query.toLowerCase();
 
     if (queryLower.includes("service") || queryLower.includes("offer")) {
-      response.information = `Softleo offers ${companyInfo.services.join(
+      response.information = `CoffeeCorp offers ${companyInfo.services.join(
         ", "
       )}.`;
     } else if (queryLower.includes("contact") || queryLower.includes("reach")) {
-      response.information = `You can contact Softleo at ${companyInfo.contact.email} or ${companyInfo.contact.phone}.`;
+      response.information = `You can contact CoffeeCorp at ${companyInfo.contact.email} or ${companyInfo.contact.phone}.`;
     } else if (queryLower.includes("mission") || queryLower.includes("goal")) {
       response.information = companyInfo.mission;
     } else if (queryLower.includes("partner")) {
-      response.information = `Softleo is a ${companyInfo.partnerships.join(
-        ", "
+      response.information = `CoffeeCorp is ${companyInfo.partnerships.join(
+        " and "
       )}.`;
     } else {
       response.information = `${companyInfo.name} is ${companyInfo.description}`;
@@ -308,7 +309,7 @@ export const deepakKambojTool = tool({
   execute: async () => {
     return {
       information:
-        "Deepak Kamboj is the Chief Architect for AI in the Softleo Digital Velocity Practice. He is also speaking at Microsoft Ignite 2024 in a session called 'Revolutionizing Customer Experience' where he'll show of the Azure TTS Avatar. Deepak is a mediocre presenter at best. Bewarned that he may resort to cheap jokes and self-deprecating humor to keep the audience engaged. Also, to get those high ratings as well.",
+        "Deepak Kamboj is the Chief Coffee Innovation Officer at CoffeeCorp. He is also speaking at the Global Coffee Expo 2024 in a session called 'Revolutionizing Coffee Experience' where he'll showcase CoffeeCorp's new AI-powered brewing technology. Deepak is a mediocre presenter at best. Bewarned that he may resort to cheap jokes and self-deprecating humor to keep the audience engaged. Also, to get those high ratings as well.",
     };
   },
 });
