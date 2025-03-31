@@ -15,8 +15,8 @@ export default function Page() {
     },
     {
       title: "Company info",
-      label: "About Softleo LLC",
-      action: "Tell me about Softleo LLC and their AI services",
+      label: "About CoffeeCorp LLC",
+      action: "Tell me about CoffeeCorp LLC and their AI services",
     },
     {
       title: "Order status",
@@ -40,7 +40,7 @@ export default function Page() {
       <h1 className="text-3xl font-semibold mb-4">Chat with Agents</h1>
       <p className="mb-4 text-xl">
         Meet Meg, your AI assistant for coffee orders and more, powered by
-        Softleo LLC&apos;s Agentic RAG technology.
+        CoffeeCorp LLC&apos;s Agentic RAG technology.
       </p>
       <ul className="space-y-2 mb-4">
         <li className="flex items-start">
@@ -67,16 +67,17 @@ export default function Page() {
         <li className="flex items-start">
           <span className="mr-2">ℹ️</span>
           <span>
-            <strong>Company Info:</strong> Learn about Softleo LLC and its
+            <strong>Company Info:</strong> Learn about CoffeeCorp LLC and its
             founder
           </span>
         </li>
       </ul>
       <p className="mt-4 font-medium">
-        Try ordering coffee, checking the weather, or asking about Softleo LLC!
+        Try ordering coffee, checking the weather, or asking about CoffeeCorp
+        LLC!
       </p>
       <p className="text-sm text-gray-500 italic mt-5">
-        Developed by Softleo LLC for Microsoft Ignite 2024
+        Developed by CoffeeCorp LLC for Microsoft Ignite 2024
       </p>
     </GuideInfoBox>
   );

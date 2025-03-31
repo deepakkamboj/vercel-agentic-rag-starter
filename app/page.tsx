@@ -1,87 +1,77 @@
-import ChatWindow from "@/components/chat-window";
-import { GuideInfoBox } from "@/components/guide/GuideInfoBox";
+"use client";
 
-export default function Page() {
-  const chatBotPrompts = [
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Link from "next/link";
+import { BrainCircuit, MessageSquare, Coffee } from "lucide-react";
+
+export default function Home() {
+  const chatOptions = [
     {
-      title: "General information",
-      label: "Tell me about yourself",
-      action:
-        "Tell me about your capabilities and what kind of questions I can ask you.",
+      title: "Multi-Model Chat",
+      description:
+        "Chat with multiple AI models including DeepSeek, Claude, and LLaMA",
+      icon: <MessageSquare className="h-7 w-7" />,
+      href: "/chat",
+      bgColor: "bg-blue-100 dark:bg-blue-900/30",
+      iconColor: "text-blue-600 dark:text-blue-400",
     },
     {
-      title: "Writing help",
-      label: "Draft an email",
-      action:
-        "Can you help me draft a professional email to schedule a meeting with a client?",
+      title: "Knowledge Base Chat",
+      description: "Chat with your knowledge base stored in Pinecone",
+      icon: <BrainCircuit className="h-7 w-7" />,
+      href: "/rag",
+      bgColor: "bg-purple-100 dark:bg-purple-900/30",
+      iconColor: "text-purple-600 dark:text-purple-400",
     },
     {
-      title: "Explain concept",
-      label: "What is machine learning?",
-      action: "Could you explain what machine learning is in simple terms?",
-    },
-    {
-      title: "Creative ideas",
-      label: "Brainstorm project ideas",
-      action:
-        "Brainstorm some creative project ideas for a web app that uses AI.",
-    },
-    {
-      title: "Knowledge question",
-      label: "How does photosynthesis work?",
-      action: "How does the process of photosynthesis work in plants?",
-    },
-    {
-      title: "Problem solving",
-      label: "Debug an issue",
-      action:
-        "How can I debug this error: 'TypeError: Cannot read property 'value' of undefined'?",
+      title: "AI Agents Chat",
+      description: "Interact with AI agents integrated with various tools",
+      icon: <Coffee className="h-7 w-7" />,
+      href: "/agents",
+      bgColor: "bg-amber-100 dark:bg-amber-900/30",
+      iconColor: "text-amber-600 dark:text-amber-400",
     },
   ];
 
-  const InfoCard = (
-    <GuideInfoBox>
-      <h2 className="text-2xl font-semibold mb-4">AI Assistant</h2>
-      <p className="mb-4">
-        Welcome to the AI Assistant! This is a general-purpose AI chat interface
-        powered by state-of-the-art language models.
-      </p>
-      <ul className="space-y-2 mb-4">
-        <li className="flex items-start">
-          <span className="mr-2">💬</span>
-          <span>
-            Ask questions, get explanations, or request help with various tasks
-          </span>
-        </li>
-        <li className="flex items-start">
-          <span className="mr-2">📝</span>
-          <span>
-            Get assistance with writing, brainstorming, or creative content
-          </span>
-        </li>
-        <li className="flex items-start">
-          <span className="mr-2">🧩</span>
-          <span>Solve problems, debug code, or explore new concepts</span>
-        </li>
-        <li className="flex items-start">
-          <span className="mr-2">🔍</span>
-          <span>
-            The more specific your questions, the better the responses
-          </span>
-        </li>
-      </ul>
-      <p className="text-sm text-gray-500 italic">
-        This chat interface uses the AI SDK to connect with powerful language
-        models
-      </p>
-    </GuideInfoBox>
-  );
-
   return (
-    <ChatWindow
-      endpoint="api/chat"
-      suggestedPrompts={chatBotPrompts}
-      emptyStateComponent={InfoCard}
-    />
+    <div className="container mx-auto py-10">
+      <h1 className="text-4xl font-bold mb-6">Welcome to AI Chat Platform</h1>
+      <p className="text-muted-foreground mb-10">
+        Select a chat type to get started with your AI conversation
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {chatOptions.map((option) => (
+          <Card
+            key={option.title}
+            className="hover:shadow-md transition-shadow hover:border-gray-400 dark:hover:border-gray-600"
+          >
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <div
+                  className={`p-3 rounded-full ${option.bgColor} ${option.iconColor} transition-transform hover:scale-110`}
+                >
+                  {option.icon}
+                </div>
+                <CardTitle>{option.title}</CardTitle>
+              </div>
+              <CardDescription>{option.description}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button asChild className="w-full">
+                <Link href={option.href}>Start Chat</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
   );
 }
