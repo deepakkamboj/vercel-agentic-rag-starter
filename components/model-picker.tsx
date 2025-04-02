@@ -18,6 +18,11 @@ const MODELS: Record<modelID, string> = {
   "llama-3.1-8b-instant": "A fast cheap model",
   "deepseek-r1-distill-llama-70b": "A reasoning model",
   "llama-3.3-70b-versatile": "A large model",
+  "claude-3-7-sonnet-20250219": "Claude 3.7 Sonnet",
+  "claude-3-7-sonnet-20250219-reasoning": "Claude 3.7 Sonnet (Reasoning)",
+  "mistral-large-latest": "Mistral Large",
+  "mistral-small-latest": "Mistral Small",
+  "ministral-3b-latest": "Ministral 3B",
 };
 
 export const ModelPicker = ({

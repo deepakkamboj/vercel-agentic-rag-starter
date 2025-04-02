@@ -52,11 +52,14 @@ export async function POST(req: Request) {
       messages,
       temperature: 0.7,
       maxTokens: 1000,
+      experimental_telemetry: {
+        isEnabled: true,
+      },
     });
 
     console.log("Response initiated from AI provider");
 
-    return result.toDataStreamResponse();
+    return result.toDataStreamResponse({ sendReasoning: true });
   } catch (error) {
     console.error("Error in chat endpoint:", error);
     const errorMessage =

@@ -48,9 +48,7 @@ export async function POST(req: Request) {
     When providing company information:
     - Always refer to the company as "CoffeeCorp LLC"
     - Be enthusiastic about CoffeeCorp LLC's services and mission
-    - Emphasize that CoffeeCorp LLC specializes in AI solutions, including Agentic RAG technology
-    - Direct specific inquiries about services, partnerships, or contact information
-    
+
     When you don't know the answer to a question:
     - Always respond promptly with "I don't have information about that specific topic."
     - Offer to help with something you do know about instead
@@ -74,6 +72,8 @@ export async function POST(req: Request) {
   }, 20000); // 20 second timeout
 
   try {
+    console.log(`Starting stream with model ${selectedModel}`);
+
     const result = streamText({
       model: agentModel.languageModel(selectedModel),
       system: systemTemplate,
@@ -93,7 +93,9 @@ export async function POST(req: Request) {
       maxTokens: 1000,
     });
 
+    //console.log("Result:", result);
     clearTimeout(timeoutId);
+
     return result.toDataStreamResponse({ sendReasoning: true });
   } catch {
     clearTimeout(timeoutId);
