@@ -11,8 +11,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/vercel-labs/ai-sdk-starter-groq/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/vercel-labs/ai-sdk-starter-groq/ci.yml?branch=main&label=build&style=flat-square&logo=github" alt="Build Status" />
+  <a href="https://github.com/deepakkamboj/vercel-agentic-rag-starter/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/deepakkamboj/vercel-agentic-rag-starter/ci.yml?branch=main&label=build&style=flat-square&logo=github" alt="Build Status" />
   </a>
 </p>
 
