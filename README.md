@@ -135,3 +135,45 @@ The Vercel Agentic RAG Starter implements a modern Retrieval Augmented Generatio
    ```
 
 4. **Open [http://localhost:3000](http://localhost:3000)** to view your application.
+
+# Vercel Agentic RAG Starter
+
+A Next.js application for building AI-powered chat interfaces with RAG capabilities.
+
+## Getting Started
+
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Environment Variables
+
+Copy `.env.example` to `.env.local` and fill in your API keys:
+
+```bash
+cp .env.example .env.local
+```
+
+## Build
+
+To build for production:
+
+```bash
+npm run build
+```
+
+This will create a static export in the `out` directory for deployment to GitHub Pages.
+
+## Deployment
+
+This project is configured to deploy to GitHub Pages automatically when you push to the main branch.
