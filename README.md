@@ -23,8 +23,7 @@
 <p align="center">
   <a href="#architecture"><strong>Architecture</strong></a> ·
   <a href="#features"><strong>Features</strong></a> ·
-  <a href="#technology-stack"><strong>Technology Stack</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
+  <a href="#technology-stack"><strong>Technology Stack</strong></a> · 
   <a href="#running-locally"><strong>Running Locally</strong></a> ·
   <a href="#contributing"><strong>Contributing</strong></a> ·
   <a href="#authors"><strong>Authors</strong></a>
