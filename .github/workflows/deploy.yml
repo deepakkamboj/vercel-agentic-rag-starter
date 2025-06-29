@@ -52,6 +52,14 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+
+      - name: Debug - List files after build
+        run: |
+          echo "Files in root:"
+          ls -la
+          echo "Looking for output directory:"
+          ls -la out/ || echo "out directory not found"
+          ls -la .next/ || echo ".next directory not found"      
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
