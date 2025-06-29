@@ -43,6 +43,7 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          BASEPATH: /vercel-agentic-rag-starter
           NEXT_PUBLIC_BASE_PATH: /vercel-agentic-rag-starter
           # Example: NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}
           # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
