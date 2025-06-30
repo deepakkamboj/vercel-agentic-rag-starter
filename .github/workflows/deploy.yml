@@ -54,9 +54,6 @@ jobs:
           PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
 
-      - name: Export static site
-        run: npx next export
-
       - name: Debug - List files after build
         run: |
           echo "Files in root:"
